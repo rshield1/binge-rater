@@ -1,7 +1,7 @@
 Models -
     - User
     - Show
-    - Star
+    - Rating
 
 Views -
     -Users
@@ -15,14 +15,9 @@ Views -
         -index.erb
         -new.erb
         -show.erb
-    -Stars
-        -edit.erb
-        -show.erb
-        -new.erb
 
 Controllers -
     - application_controller
     - shows_controller
-    - stars_controller
     - users_controller
 
