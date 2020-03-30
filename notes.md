@@ -24,4 +24,5 @@ Controllers -
     - application_controller
     - shows_controller
     - stars_controller
+    - users_controller
 
