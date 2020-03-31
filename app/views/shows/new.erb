@@ -1,0 +1,46 @@
+<h3>Add a Show</h3>
+
+<form action="/shows" method="post">
+
+<label>Name: </label>
+<input type="text" name="name" /><br />
+<label>Category: </label>
+<select name="category">
+    <option value="volvo">Suspense</option>
+    <option value="saab">Comedy</option>
+    <option value="fiat">Action</option>
+    <option value="audi">Foreign</option>
+    <option value="audi">Drama</option>
+    <option value="audi">Family</option>
+    <option value="audi">Anime</option>
+    <option value="audi">Docu-Series</option>
+    <option value="audi">Cartoon</option>
+</select><br />
+<label>Seasons: </label>
+<input type="text" name="seasons" /><br />
+<label>Description: </label> <br />
+<textarea name="description" rows="10" cols="30"> </textarea><br />
+<label>Rating (between 1 and 5): </label>
+<input type="number" name="rating" min="1" max="5"/><br />
+<input type="submit" value="Create Show" />
+
+</form>
+
+<style>
+
+body {
+    background-image:url('/images/image4.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+
+</style>
+
+
+<!-- t.string  "name"
+t.string  "category"
+t.integer "seasons"
+t.string  "description"
+t.integer "user_id" -->
