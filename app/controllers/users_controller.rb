@@ -1,5 +1,10 @@
 class UsersController < ApplicationController
 
+get "/users" do
+    @users = User.all
+    erb :'/users/index'
+end
+
 get '/login' do
     erb :'/users/login'
 end
@@ -16,6 +21,10 @@ end
 
 
 get '/signup' do
+    if Helpers.is_logged_in?(session)
+        user = Helpers.current_user(session)
+        redirect to "/users/#{user.id}"
+    end
     erb :'/users/signup'
 end
 
@@ -41,6 +50,14 @@ get '/users/:id' do
        redirect to '/welcome' 
     end
         erb  :'/users/show'
+end
+
+
+
+get '/logout' do
+    session.clear
+    redirect to '/'
+    # erb :'/users/login'
 end
 
 
