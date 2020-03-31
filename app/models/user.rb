@@ -4,8 +4,10 @@ has_many :recipes
 
 #gives you access to valid? method in your user class
 #it checks the validity of your user
-validates :username, presence: true uniqueness: true
-validates :email, presence: true uniqueness: true
+
+
+validates :username, presence: true, uniqueness: true
+validates :email, presence: true, uniqueness: true
 
 
 
