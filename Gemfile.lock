@@ -83,7 +83,7 @@ PLATFORMS
 
 DEPENDENCIES
   activerecord (~> 4.2, >= 4.2.6)
-  bcrypt
+  bcrypt (= 3.1.13)
   pry
   rake
   require_all

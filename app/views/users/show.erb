@@ -1,1 +1,7 @@
 <h3>Welcome <%= @user.username %></h3>
+
+<ul>
+    <% @shows.each do |show| %>
+        <li><a href='/shows/<%= show.id %> <%= show %></a> </li> 
+     <% end  %>
+</ul>

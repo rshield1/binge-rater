@@ -49,7 +49,9 @@ end
 
 get '/users/:id' do
     if Helpers.is_logged_in?(session) && User.find_by(id: params[:id])
-        @user = User.find_by(id: params[:id]) 
+        @user = User.find_by(id: params[:id])
+        #user has_many shows 
+        @shows = @user.shows
     else
        redirect to '/welcome' 
     end

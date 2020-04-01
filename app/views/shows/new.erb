@@ -1,3 +1,6 @@
+
+<div>
+
 <h3>Add a Show</h3>
 
 <form action="/shows" method="post">
@@ -6,18 +9,18 @@
 <input type="text" name="name" /><br />
 <label>Category: </label>
 <select name="category">
-    <option value="volvo">Suspense</option>
-    <option value="saab">Comedy</option>
-    <option value="fiat">Action</option>
-    <option value="audi">Foreign</option>
-    <option value="audi">Drama</option>
-    <option value="audi">Family</option>
-    <option value="audi">Anime</option>
-    <option value="audi">Docu-Series</option>
-    <option value="audi">Cartoon</option>
+    <option value="Suspense">Suspense</option>
+    <option value="Comedy">Comedy</option>
+    <option value="Action">Action</option>
+    <option value="Foreign">Foreign</option>
+    <option value="Drama">Drama</option>
+    <option value="Family">Family</option>
+    <option value="Anime">Anime</option>
+    <option value="Docu-Series">Docu-Series</option>
+    <option value="Cartoon">Cartoon</option>
 </select><br />
 <label>Seasons: </label>
-<input type="text" name="seasons" /><br />
+<input type="number" name="seasons" /><br />
 <label>Description: </label> <br />
 <textarea name="description" rows="10" cols="30"> </textarea><br />
 <label>Rating (between 1 and 5): </label>
@@ -25,19 +28,18 @@
 <input type="submit" value="Create Show" />
 
 </form>
+</div>
 
 <style>
 
 body {
-    background-image:url('/images/image4.jpg');
+    background-image:url('/images/image7.jpg');
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
 }
 
-
 </style>
-
 
 <!-- t.string  "name"
 t.string  "category"

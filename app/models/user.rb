@@ -1,6 +1,6 @@
 #Associates model with table and use methods within AR
 class User < ActiveRecord::Base
-has_many :recipes
+has_many :shows
 
 #gives you access to valid? method in your user class
 #it checks the validity of your user

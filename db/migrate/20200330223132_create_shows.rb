@@ -5,6 +5,7 @@ class CreateShows < ActiveRecord::Migration
       t.string :category
       t.integer :seasons
       t.string :description
+      t.integer :rating
       t.integer :user_id
     end
 

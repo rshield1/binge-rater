@@ -1,5 +1,5 @@
 ENV['SINATRA_ENV'] ||= "development"
-require 'em/pure_ruby' if not defined?(EventMachine)
+# require 'em/pure_ruby' if not defined?(EventMachine)
 
 
 #requiring our gems to setup

@@ -9,7 +9,7 @@ gem 'sqlite3', git: "https://github.com/sparklemotion/sqlite3-ruby"
 gem 'thin'
 gem 'shotgun'
 gem 'pry'
-gem 'bcrypt'
+gem 'bcrypt', '3.1.13'
 gem 'tux'
 
 # group :test do
