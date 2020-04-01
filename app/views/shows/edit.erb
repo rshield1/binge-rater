@@ -1,14 +1,14 @@
 <h1>Edit Show</h1>
 
-<form action="/recipes/<%= @show.id %>" method="post">
+<form action="/shows/<%= @show.id %>" method="post">
 
 <%# We use hidden because our http request can only make get and post requests  %>
     <input type="hidden" name="_method" value="patch">
 
 <label>Name: </label>
-    <input type="text" name="name" value="<%= @show.name %>"><br />
+    <input type="text" name="show[name]" value="<%= @show.name %>"><br />
 <label> Category: </label>
-<select name="category">
+<select name="show[category]">
     <option value="Suspense">Suspense</option>
     <option value="Comedy">Comedy</option>
     <option value="Action">Action</option>
@@ -20,11 +20,11 @@
     <option value="Cartoon">Cartoon</option>
 </select><br />
 <label>Seasons: </label>
-<input type="number" name="seasons" value="<%= @show.seasons %>"><br />
+<input type="number" name="show[seasons]" value="<%= @show.seasons %>"><br />
 <label>Description: </label> <br />
-<textarea name="description" rows="10" cols="30"> </textarea><br />
+<textarea name="show[description]" rows="10" cols="30"> </textarea><br />
 <label>Rating (between 1 and 5): </label>
-<input type="number" name="rating" min="1" max="5" value="<%= @show.rating %>"/><br />
+<input type="number" name="show[rating]" min="1" max="5" value="<%= @show.rating %>"/><br />
 <input type="submit" value="Edit Show" />
 </form>
 

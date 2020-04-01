@@ -33,13 +33,17 @@ class ShowsController < ApplicationController
 
     get '/shows/:id/edit' do
         @show = Show.find_by(id: params[:id])
+        if !Helpers.is_logged_in?(session) || @show.user != Helpers.current_user(session)
+            redirect '/'
+        end
         erb :'/shows/edit'
     end
 
     patch '/shows/:id' do 
-
+        show = Show.find_by(id: params[:id])
+        show.update(params[:show])
+        redirect to "/shows/#{show.id}"
     end
-
 
 
 end

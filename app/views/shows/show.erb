@@ -21,5 +21,6 @@
 <p><%= @show.rating %></p>
 
 <%# Edit show  %>
-
+<% if Helpers.current_user(session).id == @show.user %>
 <a href="/shows/<%= @show.id %>/edit">Edit Show</a>
+<% end %>
