@@ -1,7 +1,9 @@
 <h3>Welcome <%= @user.username %></h3>
 
+<h4>My Shows<h4>
+<br>
 <ul>
     <% @shows.each do |show| %>
-        <li><a href='/shows/<%= show.id %> <%= show %></a> </li> 
+        <li><h5><a href="/shows/<%= show.id %>"> <%= show.name %> </a> </li></h5> 
      <% end  %>
 </ul>
