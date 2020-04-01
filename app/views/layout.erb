@@ -45,7 +45,7 @@
           <a class="dropdown-item" href="/users">All Users</a>
           <a class="dropdown-item" href="/users/<%=Helpers.current_user(session).id if Helpers.is_logged_in?(session) %>">My Shows</a>
           <a class="dropdown-item" href="/shows/new">New Show</a>
-          <a class="dropdown-item" href="#">All Shows</a>
+          <a class="dropdown-item" href="/shows">All Shows</a>
           <a class="dropdown-item" href="/logout">Log Out</a>
           
         </div>

@@ -1,0 +1,44 @@
+<h1>Edit Show</h1>
+
+<form action="/recipes/<%= @show.id %>" method="post">
+
+<%# We use hidden because our http request can only make get and post requests  %>
+    <input type="hidden" name="_method" value="patch">
+
+<label>Name: </label>
+    <input type="text" name="name" value="<%= @show.name %>"><br />
+<label> Category: </label>
+<select name="category">
+    <option value="Suspense">Suspense</option>
+    <option value="Comedy">Comedy</option>
+    <option value="Action">Action</option>
+    <option value="Foreign">Foreign</option>
+    <option value="Drama">Drama</option>
+    <option value="Family">Family</option>
+    <option value="Anime">Anime</option>
+    <option value="Docu-Series">Docu-Series</option>
+    <option value="Cartoon">Cartoon</option>
+</select><br />
+<label>Seasons: </label>
+<input type="number" name="seasons" value="<%= @show.seasons %>"><br />
+<label>Description: </label> <br />
+<textarea name="description" rows="10" cols="30"> </textarea><br />
+<label>Rating (between 1 and 5): </label>
+<input type="number" name="rating" min="1" max="5" value="<%= @show.rating %>"/><br />
+<input type="submit" value="Edit Show" />
+</form>
+
+
+<style>
+body {
+    background-image:url('/images/image7.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    text-align: center;
+    margin: auto;
+    color: white;
+}
+</style>
+
+

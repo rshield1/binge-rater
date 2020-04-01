@@ -1,5 +1,10 @@
 class ShowsController < ApplicationController
 
+    get '/shows' do
+        @shows = Show.all
+        erb :'shows/index'
+    end
+
 
     get '/shows/new' do
         if !Helpers.is_logged_in?(session)
@@ -23,8 +28,16 @@ class ShowsController < ApplicationController
             redirect '/'
         end
         @show = Show.find_by(id: params[:id])
-
         erb :'shows/show'
+    end
+
+    get '/shows/:id/edit' do
+        @show = Show.find_by(id: params[:id])
+        erb :'/shows/edit'
+    end
+
+    patch '/shows/:id' do 
+
     end
 
 

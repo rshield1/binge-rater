@@ -1,0 +1,9 @@
+<h1>All Shows</h1>
+
+<ul>
+<% @shows.each do |show| %>
+
+<li><a href="/shows/<%= show.id %>"><%= show.name %></a></li>
+
+<% end %>
+</ul>
