@@ -45,6 +45,12 @@ post "/signup" do
         end
 end
 
+get '/logout' do
+    session.clear
+    redirect to '/'
+    # erb :'/users/login'
+end
+
 #create a dynamic route for id
 
 get '/users/:id' do
@@ -60,11 +66,7 @@ end
 
 
 
-get '/logout' do
-    session.clear
-    redirect to '/'
-    # erb :'/users/login'
-end
+
 
 
 end
