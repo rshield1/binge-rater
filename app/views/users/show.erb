@@ -17,4 +17,9 @@
     <% @shows.each do |show| %>
         <li><h5><a href="/shows/<%= show.id %>"> <%= show.name %> </a> </li></h5> 
      <% end  %>
+
+    <%# Adding a new show button  %>
+     <form method="get" action="/shows/new">
+        <button type="submit">Add a Show</button>
+    </form>
 </ul>

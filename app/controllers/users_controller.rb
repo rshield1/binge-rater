@@ -2,6 +2,7 @@ class UsersController < ApplicationController
 
 get "/users" do
     if Helpers.is_logged_in?(session)
+        #displays all users if user is logged in.
         @users = User.all    
     else
         redirect to '/'
