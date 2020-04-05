@@ -3,7 +3,9 @@
 <ul>
 <% @shows.each do |show| %>
 
+<li><%= show.user_id. %></li>
 <li><a href="/shows/<%= show.id %>"><%= show.name %></a></li>
+
 
 <% end %>
 

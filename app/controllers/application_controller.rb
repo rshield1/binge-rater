@@ -14,6 +14,7 @@ class ApplicationController < Sinatra::Base
 
   #Initial route
   get "/" do
+    session.clear
     erb :welcome
   end
 
