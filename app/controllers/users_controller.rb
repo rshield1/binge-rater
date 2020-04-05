@@ -65,11 +65,15 @@ get '/users/:id' do
         erb  :'/users/show'
 end
 
-get '/users/:id' do
+# need assistance on delete method
+
+get '/delete' do
     if Helpers.is_logged_in?(session) && User.find_by(id: params[:id])
         user = User.find_by(username: params[:username])
-        user.delete
-        redirect to '/welcome' 
+        user = nil
+        user.save
+        session.clear
+        redirect to '/' 
     end
 end
 

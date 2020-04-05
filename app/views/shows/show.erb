@@ -2,23 +2,28 @@
  body {
           color: white;
           text-align: center;
-          margin: auto;
+          margin-top: auto;
           background-image:url('/images/image6.jpg');
           background-repeat: no-repeat;
-          background-size: cover
+          background-size: cover;
       }
+    h5 {
+        color: gold;
+    }
+
 </style>
+<br>
 
 <h5>Show Name</h5>
 <h3> <%= @show.name %> </h3>
 <h5>Catetory</h5>
-<p><%= @show.category %></p>
+<h3><%= @show.category %></h3>
 <h5>Seasons</h5>
-<p><%= @show.seasons %></p>
+<h3><%= @show.seasons %></h3>
 <h5>Description</h5>
-<p><%= @show.description %></p>
+<h3><%= @show.description %></h3>
 <h5>Rating</h5>
-<p><%= @show.rating %></p>
+<h3><%= @show.rating %></h3>
 
 <%# Edit show  %>
 <% if Helpers.current_user(session).id == @show.user_id %>

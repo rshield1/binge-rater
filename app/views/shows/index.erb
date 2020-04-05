@@ -3,9 +3,9 @@
 <ul>
 <% @shows.each do |show| %>
 
-<li><%= show.user_id. %></li>
-<li><a href="/shows/<%= show.id %>"><%= show.name %></a></li>
 
+<li><a href="/shows/<%= show.id %>"><%= show.name %></a></li>
+<li>Rating: <%= show.rating.to_s %></li>
 
 <% end %>
 
@@ -14,7 +14,7 @@
 
 <style>
  body {
-          color: white;
+          color: red;
           text-align: center;
           margin: auto;
           background-image:url('/images/image9.jpg');
@@ -23,4 +23,5 @@
           text-align: center;
           font-size: 1.5em;
       }
+
 </style>

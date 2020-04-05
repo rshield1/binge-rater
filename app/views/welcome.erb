@@ -39,6 +39,10 @@
           background-size: cover
       }
 
+      h3 {
+        color: gold;
+      }
+
       @media (min-width: 768px) {
         .bd-placeholder-img-lg {
           font-size: 3.5rem;
@@ -57,9 +61,17 @@
   <main role="main" class="inner cover">
     <img src="/images/BR2.jpg" alt="robs photo" height="108" width="316">
     <h3><strong>Rate Your Favorite Binge-worthy movies!!</strong></h3>
+
+    <% if Helpers.is_logged_in?(session) %>
+    <p class="lead">
+      <a href="/users/<%=Helpers.current_user(session).id if Helpers.is_logged_in?(session) %>" class="btn btn-lg btn-primary">Welcome</a>
+      
+    </p>
+    <% else %>
     <p class="lead">
       <a href="/signup" class="btn btn-lg btn-primary">Sign Up</a> <a href="/login" class="btn btn-lg btn-danger">Log In</a>
     </p>
+    <% end %>
   </main>
 
   <footer class="mastfoot mt-auto">
