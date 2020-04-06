@@ -7,6 +7,7 @@ class ShowsController < ApplicationController
 
 
     get '/shows/new' do
+        #if there isnt a user logged in, redirect back to homepage
         if !Helpers.is_logged_in?(session)
             redirect '/'
         end
@@ -17,6 +18,7 @@ class ShowsController < ApplicationController
         show = Show.create(params)
         #find the current user that is logged in
         user = Helpers.current_user(session)
+        #associate that show with the user.
         show.user = user
         show.save
         redirect to "/users/#{user.id}"
@@ -42,6 +44,7 @@ class ShowsController < ApplicationController
     patch '/shows/:id' do 
         show = Show.find_by(id: params[:id])
         if show.user == Helpers.current_user(session)
+            #update params of show
             show.update(params[:show])
             redirect to "/shows/#{show.id}"
         else

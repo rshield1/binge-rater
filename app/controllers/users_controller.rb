@@ -15,8 +15,10 @@ get '/login' do
 end
 
 post '/login' do
+    #Uses params to authenticate a specific user in the database.  If user doesnt exist, redirect to homepage
     @user = User.find_by(username: params[:username])
         if @user && @user.authenticate(params[:password])
+    #create a new session hash using the user's id
         session[:user_id] = @user.id
         redirect to "/users/#{@user.id}"
         else
@@ -28,12 +30,13 @@ end
 get '/signup' do
     if Helpers.is_logged_in?(session)
         user = Helpers.current_user(session)
+        #creates dynamic route
         redirect to "/users/#{user.id}"
     end
     erb :'/users/signup'
 end
 
-#taken from signup.erb form for params
+#taken from signup.erb form for params to create new user
 post "/signup" do
     @user = User.create(params)
     #check the validity of user
@@ -47,6 +50,7 @@ post "/signup" do
 end
 
 get '/logout' do
+    #clears session to log out the user.
     session.clear
     redirect to '/'
     # erb :'/users/login'
@@ -62,6 +66,7 @@ get '/users/:id' do
     else
        redirect to '/welcome' 
     end
+    #send users to their show page
         erb  :'/users/show'
 end
 
