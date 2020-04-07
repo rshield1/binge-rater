@@ -72,9 +72,10 @@ end
 
 # need assistance on delete method
 
-get '/delete' do
+get "/delete" do
     if Helpers.is_logged_in?(session) && User.find_by(id: params[:id])
         user = User.find_by(username: params[:username])
+        binding.pry
         user = nil
         user.save
         session.clear
