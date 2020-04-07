@@ -3,7 +3,7 @@ class User < ActiveRecord::Base
 has_many :shows
 
 #gives you access to valid? method in your user class
-#it checks the validity of your user
+#it checks the validity of your user. Only 1 person can have that username and email
 
 
 validates :username, presence: true, uniqueness: true

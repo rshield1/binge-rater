@@ -43,6 +43,7 @@ class ShowsController < ApplicationController
 
     patch '/shows/:id' do 
         show = Show.find_by(id: params[:id])
+        #compare shows user with current user before making change
         if show.user == Helpers.current_user(session)
             #update params of show
             show.update(params[:show])
