@@ -6,7 +6,7 @@
 
 ## Installation
 
-TODO:
+## TODO:
     Welcome to my program!! 
 
     1. After cloning this repo to you local drive by running `git clone https://github.com/rshield1/binge-rater.git`, change directory to the cloned folder.
