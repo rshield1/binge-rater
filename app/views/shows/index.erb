@@ -1,6 +1,6 @@
 <h1>All Shows</h1>
 
-<ul>
+<ul id="cover">
 <% @shows.each do |show| %>
 
 
@@ -23,5 +23,18 @@
           text-align: center;
           font-size: 1.5em;
       }
+
+#cover {
+    text-align: center;
+    display: auto;
+    align-items: center;
+    left: 0;
+    position: center;
+    top: 0;
+    width: 50%;
+    margin: auto;
+    background-color: rgba(0,0,0,0.5);
+    border-radius: 10px;
+}      
 
 </style>

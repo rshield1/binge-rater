@@ -1,3 +1,20 @@
+
+
+<h3>Welcome <%= @user.username.capitalize %></h3>
+
+<h4>My Shows<h4>
+<br>
+<ul>
+    <% @shows.each do |show| %>
+        <li id="cover"><h3><a href="/shows/<%= show.id %>"> <%= show.name %> </a> </h3> </li>
+     <% end  %>
+
+    <%# Adding a new show button  %>
+     <form method="get" action="/shows/new">
+        <button class="btn btn-primary btn-lg" type="submit">Add a Show</button>
+    </form>
+</ul>
+
 <style>
  body {
           color: red;
@@ -7,19 +24,16 @@
           background-repeat: no-repeat;
           background-size: cover
       }
+#cover {
+    text-align: center;
+    display: auto;
+    align-items: center;
+    left: 0;
+    position: center;
+    top: 0;
+    width: 50%;
+    margin: auto;
+    background-color: rgba(0,0,0,0.3);
+    border-radius: 10px;
+}
 </style>
-
-<h3>Welcome <%= @user.username.capitalize %></h3>
-
-<h4>My Shows<h4>
-<br>
-<ul>
-    <% @shows.each do |show| %>
-        <li><h5><a href="/shows/<%= show.id %>"> <%= show.name %> </a> </li></h5> 
-     <% end  %>
-
-    <%# Adding a new show button  %>
-     <form method="get" action="/shows/new">
-        <button type="submit">Add a Show</button>
-    </form>
-</ul>

@@ -1,9 +1,8 @@
 <h1>All Users</h1>
 
 <% @users.each do |user| %>
-    <ul>
-    <li><%= user.username.capitalize %></li>
-    <br>
+    <ul id="cover">
+    <li><h2><%= user.username.capitalize %></h2></li>
     </ul>
     
 
@@ -11,11 +10,24 @@
 
 <style>
  body {
-          color: gold;
+          color: white;
           text-align: center;
           font-size: 1.3em;
           background-image:url('/images/image3.jpg');
           background-repeat: no-repeat;
           background-size: cover;
       }
+
+#cover {
+    text-align: center;
+    display: auto;
+    align-items: center;
+    left: 0;
+    position: center;
+    top: 0;
+    width: 50%;
+    margin: auto;
+    background-color: rgba(0,0,0,0.5);
+    border-radius: 10px;
+}
 </style>
