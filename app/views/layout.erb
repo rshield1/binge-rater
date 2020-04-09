@@ -51,7 +51,15 @@
           <a class="dropdown-item" href="/shows/new">New Show</a>
           <a class="dropdown-item" href="/shows">All Shows</a>
           <a class="dropdown-item" href="/logout">Log Out</a>
-          <a class="dropdown-item" href="/delete">Delete Account</a>
+
+        <%# Add a delete form %>
+        <form action="/delete" method="post">
+        <input type="hidden" name="_method" value="delete">
+        <input type="submit" class="dropdown-item" value="Delete">
+        <%# <a  href="/delete">Delete Account</a> %>
+        </form>
+
+          
           
         </div>
       </li>

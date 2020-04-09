@@ -72,12 +72,9 @@ end
 
 # need assistance on delete method
 
-get "/delete" do
-    if Helpers.is_logged_in?(session) && User.find_by(id: params[:id])
-        user = User.find_by(username: params[:username])
-        binding.pry
-        user = nil
-        user.save
+delete "/delete" do
+    if Helpers.is_logged_in?(session)
+        Helpers.current_user(session).delete
         session.clear
         redirect to '/' 
     end

@@ -18,18 +18,19 @@
                 <div class="col-xl-5 col-lg-6 col-md-8 col-sm-10 mx-auto text-center form p-4">
                     <h1 class="display-4 py-2 text-truncate">Sign Up</h1>
                     <div class="px-2">
-                        <form action="" class="justify-content-center">
+
+                        <form action='/signup' method="post" class="justify-content-center">
                             <div class="form-group">
-                                <label class="sr-only">Name</label>
-                                <input type="text" class="form-control" placeholder="John Doe">
+                                <label class="sr-only">Username:</label>
+                                <input type="text" name="username" class="form-control" placeholder="John Doe">
                             </div>
                             <div class="form-group">
-                                <label class="sr-only">Email</label>
-                                <input type="text" class="form-control" placeholder="john.doe@example.com">
+                                <label class="sr-only">Email:</label>
+                                <input type="text" name="email" class="form-control" placeholder="john.doe@example.com">
                             </div>
                             <div class="form-group">
                                 <label class="sr-only">Password</label>
-                                <input type="text" class="form-control" placeholder="password">
+                                <input type="password" name="class="form-control" placeholder="password">
                             </div>
                             <button type="submit" class="btn btn-primary btn-lg">Submit</button>
                         </form>
