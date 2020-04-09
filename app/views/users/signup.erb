@@ -1,6 +1,6 @@
 
-<h1>Sign Up</h1>
-<!--Form for sign-up to post to /signup-->
+<%# <h1>Sign Up</h1> %>
+<%# <!--Form for sign-up to post to /signup-->
 <form class=""action='/signup' method='post'>
 <label>Username:</label>
 <input type="text" name="username" /><br />
@@ -9,9 +9,9 @@
 <label>Password:</label>
 <input type="password" name="password" /><br />
 <input type="submit" />
-</form>
+</form> %>
 
-<%# <section id="cover" class="min-vh-100">
+<section id="cover" class="min-vh-100">
     <div id="cover-caption">
         <div class="container">
             <div class="row text-white">
@@ -22,24 +22,24 @@
                         <form action='/signup' method="post" class="justify-content-center">
                             <div class="form-group">
                                 <label class="sr-only">Username:</label>
-                                <input type="text" name="username" class="form-control" placeholder="John Doe">
+                                <input type="text" name="username" class="form-control" placeholder="Username">
                             </div>
                             <div class="form-group">
                                 <label class="sr-only">Email:</label>
-                                <input type="text" name="email" class="form-control" placeholder="john.doe@example.com">
+                                <input type="email" name="email" class="form-control" placeholder="Email">
                             </div>
                             <div class="form-group">
                                 <label class="sr-only">Password</label>
-                                <input type="password" name="class="form-control" placeholder="password">
+                                <input type="password" name="password" class="form-control" placeholder="password">
                             </div>
-                            <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+                            <input type="submit" class="btn btn-primary btn-lg"></input>
                         </form>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</section> %>
+</section>
 
 <style>
 #cover {

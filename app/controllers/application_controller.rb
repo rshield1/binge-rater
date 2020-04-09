@@ -7,6 +7,9 @@ class ApplicationController < Sinatra::Base
   configure do
     set :public_folder, 'public'
     set :views, 'app/views'
+
+    #Registering Sinatra Flash
+    register Sinatra::Flash
     
     #remember what user is logged in with sessions with a hash
     enable :sessions
@@ -15,7 +18,6 @@ class ApplicationController < Sinatra::Base
 
   #Initial route
   get "/" do
-    # session.clear
     erb :welcome
   end
 
