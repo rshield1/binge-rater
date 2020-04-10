@@ -41,7 +41,10 @@
 
       h3 {
         color: white;
-        background: rgba(255, 0, 0, 0.2);
+        align-items: center;
+        background: rgba(0, 0, 0, 0.2);
+        background-repeat: no-repeat;
+        background-position: center center;
         font-size: 1.2em;
       }
 
@@ -60,9 +63,10 @@
   <header class="masthead mb-auto">
   </header>
 <!--I want a photo of log here -->
+<h3><strong>Rate Your Favorite Binge-worthy Shows!!</strong></h3>
   <main role="main" class="inner cover">
     <img src="/images/BR2.jpg" alt="robs photo" height="108" width="316">
-    <h3><strong>Rate Your Favorite Binge-worthy Shows!!</strong></h3>
+    
 
     <% if Helpers.is_logged_in?(session) %>
     <p class="lead">

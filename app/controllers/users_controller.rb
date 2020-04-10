@@ -46,6 +46,7 @@ post "/signup" do
         #user id is unique to each user
             redirect to "/users/#{@user.id}"
         else 
+            flash[:message] = "Please log into your account"
             redirect to '/signup'
         end
 end

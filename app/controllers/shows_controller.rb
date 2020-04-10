@@ -47,6 +47,7 @@ class ShowsController < ApplicationController
         if show.user == Helpers.current_user(session)
             #update params of show
             show.update(params[:show])
+            flash[:message] = "Successfully updated show!"
             redirect to "/shows/#{show.id}"
         else
             redirect to "/shows"
