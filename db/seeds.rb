@@ -1,3 +1,5 @@
+#Seed file is used for testing my actual objects on the application.
+
 User.destroy_all
 Show.destroy_all
 

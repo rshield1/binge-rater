@@ -67,12 +67,13 @@
   <main role="main" class="inner cover">
     <img src="/images/BR2.jpg" alt="robs photo" height="108" width="316">
     
-
+    <%# Only show this single button if user is logged in %>
     <% if Helpers.is_logged_in?(session) %>
     <p class="lead">
       <a href="/users/<%=Helpers.current_user(session).id if Helpers.is_logged_in?(session) %>" class="btn btn-lg btn-primary">Continue</a> 
     </p>
     <% else %>
+    <%# Or else, show them the sign-up and log-in button %>
     <p class="lead">
       <a href="/signup" class="btn btn-lg btn-primary">Sign Up</a> <a href="/login" class="btn btn-lg btn-danger">Log In</a>
     </p>

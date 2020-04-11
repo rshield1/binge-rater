@@ -8,7 +8,7 @@ class ApplicationController < Sinatra::Base
     set :public_folder, 'public'
     set :views, 'app/views'
 
-    #Registering Sinatra Flash
+    #Registering Sinatra Flash to create error messages
     register Sinatra::Flash
     
     #remember what user is logged in with sessions with a hash

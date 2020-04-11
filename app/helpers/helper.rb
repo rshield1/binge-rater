@@ -8,7 +8,7 @@ def self.current_user(session)
 end
 
 def self.is_logged_in?(session)
-    #is there a user id in our session?
+    #is there a user id in our session check if true or false?
     session[:user_id] ? true : false
 end
 

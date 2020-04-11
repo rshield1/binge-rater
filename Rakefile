@@ -1,3 +1,4 @@
+#defines deployment environment
 ENV["SINATRA_ENV"] ||= "development"
 
 require_relative './config/environment'
