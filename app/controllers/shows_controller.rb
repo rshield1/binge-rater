@@ -5,23 +5,22 @@ class ShowsController < ApplicationController
         erb :'shows/index'
     end
 
-
-    get '/shows/new' do
-        #if there isnt a user logged in, redirect back to homepage
-        if !Helpers.is_logged_in?(session)
-            redirect '/'
-        end
-        erb :'shows/new'
-    end
-
+    #find the current user that is logged in
+    #associate that show with the user.
     post '/shows' do
         show = Show.create(params)
-        #find the current user that is logged in
         user = Helpers.current_user(session)
-        #associate that show with the user.
         show.user = user
         show.save
         redirect to "/users/#{user.id}"
+    end
+
+    #if there isnt a user logged in, redirect back to homepage
+    get '/shows/new' do
+        if !Helpers.is_logged_in?(session)
+            redirect '/'
+        end
+            erb :'shows/new'
     end
 
 

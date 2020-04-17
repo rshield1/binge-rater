@@ -1,9 +1,8 @@
 <h1>Edit Show</h1>
 
 <form action="/shows/<%= @show.id %>" method="post">
-
 <%# We use hidden because our http request can only make get and post requests  %>
-    <input type="hidden" name="_method" value="patch">
+<input type="hidden" name="_method" value="patch">
 
 <label>Name: </label>
     <input type="text" name="show[name]" value="<%= @show.name %>"><br />
@@ -19,6 +18,7 @@
     <option value="Docu-Series">Docu-Series</option>
     <option value="Cartoon">Cartoon</option>
 </select><br />
+
 <label>Seasons: </label>
 <input type="number" name="show[seasons]" value="<%= @show.seasons %>"><br />
 <label>Description: </label> <br />
