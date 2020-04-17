@@ -1,29 +1,29 @@
 class UsersController < ApplicationController
 
+
+#displays all users if user is logged in.
 get "/users" do
     if Helpers.is_logged_in?(session)
-        #displays all users if user is logged in.
-        @users = User.all    
+      @users = User.all    
     else
-        redirect to '/'
+      redirect to '/'
     end
-    erb :'/users/index'
+      erb :'/users/index'
 end
 
 get '/login' do
     erb :'/users/login'
 end
-
-post '/login' do
     #Uses params to authenticate a specific user in the database.  If user doesnt exist, redirect to homepage
+    #create a new session hash using the user's id
+post '/login' do
     @user = User.find_by(username: params[:username])
         if @user && @user.authenticate(params[:password])
-    #create a new session hash using the user's id
-        session[:user_id] = @user.id
-        redirect to "/users/#{@user.id}"
+            session[:user_id] = @user.id
+            redirect to "/users/#{@user.id}"
         else
-        flash[:message] = "Invalid username or password!"    
-        redirect to '/login'
+            flash[:message] = "Invalid username or password!"    
+            redirect to '/login'
         end
 end
 
@@ -38,41 +38,39 @@ get '/signup' do
 end
 
 #taken from signup.erb form for params to create new user
+#check the validity of user
+#user id is unique to each user
 post "/signup" do
-    @user = User.create(params)
-    #check the validity of user
+    @user = User.create(params) 
         if @user.valid?
             session[:user_id] = @user.id
-        #user id is unique to each user
-            redirect to "/users/#{@user.id}"
+            redirect to "/users/#{@user.id}"        
         else 
             flash[:message] = "Please log into your account"
             redirect to '/signup'
         end
 end
 
-get '/logout' do
-    #clears session to log out the user.
+#clears session to log out the user.
+
+get '/logout' do   
     session.clear
     redirect to '/'
-    # erb :'/users/login'
 end
 
 #create a dynamic route for id
+#user has_many shows 
+#send users to their show page
 
 get '/users/:id' do
     if Helpers.is_logged_in?(session) && User.find_by(id: params[:id])
         @user = User.find_by(id: params[:id])
-        #user has_many shows 
         @shows = @user.shows
     else
        redirect to '/welcome' 
     end
-    #send users to their show page
         erb  :'/users/show'
 end
-
-# need assistance on delete method
 
 delete "/delete" do
     if Helpers.is_logged_in?(session)
