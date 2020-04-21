@@ -28,6 +28,8 @@ What should I be prepared to answer??  Well lets answer these questions!
 
 1. Explain the MVC framework
 
+    Separation of concerns, single responsibility, keep code organized.
+
 2. How do we access data in our views that we defined in our controllers?
 
     When you store the params in an instance variable within the defined block, you can use
@@ -35,9 +37,12 @@ What should I be prepared to answer??  Well lets answer these questions!
 
 3. What is the difference between “redirect to” and “erb”
 
+    
+
 4. What methods do we get from “belongs_to”, “has_many”, and “has_secure_password”?
 
     Belongs to: 
+
         association(force_reload = false)
             Returns the associated object. nil is returned if none is found.
 
@@ -76,6 +81,10 @@ What should I be prepared to answer??  Well lets answer these questions!
             Returns the number of associated objects.
 
         (Note: collection is replaced with the symbol passed as the first argument, so has_many :clients would add among others clients.empty?.)
+    
+    Has_secure_password:
+
+        secures the password with a params hash using password_digest (bcrypt gem)
 
 5. How do we represent relationships between models in our tables?
 
