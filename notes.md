@@ -86,7 +86,7 @@ What should I be prepared to answer??  Well lets answer these questions!
     
     Has_secure_password:
 
-        secures the password with a params hash using password_digest (bcrypt gem)
+        secures the password with a params hash using password_digest (bcrypt gem).  Writes methods to verify a user's password
 
 5. How do we represent relationships between models in our tables?
 
@@ -95,7 +95,7 @@ What should I be prepared to answer??  Well lets answer these questions!
 
 6. What are params? What are the two places they come from? 
 
-    params is a hash that are taken from the form created in our erb pages to use in our routes.  We take the information from the key "name."
+    params is a hash that are taken from the form submitted in our erb pages to use in our routes.  We take the information from the key type and "name."
 
 
 7. What are sessions?
@@ -110,7 +110,7 @@ What should I be prepared to answer??  Well lets answer these questions!
 
 9. How do you authenticate your users when they log in?
 
-    We use the class method .authenticate to authenticate the user's password.  We check the #password digest which is placed in the database table.  We will need to set the has_secure_password, which comes from the bcrypt gem, keeps it secured to store encrypted version.
+    We use the method .authenticate to authenticate the user's password.  We check the #password digest which is placed in the database table.  We will need to set the has_secure_password, which comes from the bcrypt gem, keeps it secured to store encrypted version.
 
 10. How do you validate that a username is unique?
 

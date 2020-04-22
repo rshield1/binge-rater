@@ -4,7 +4,7 @@
 <% @shows.each do |show| %>
 
 
-<li><a href="/shows/<%= show.id %>"><%= show.name %></a></li>
+<li><a href="/shows/<%= show.id %>"><%= show.name %></a><h5><%= show.user.username %> </h5></li>
 <li>Rating: <%= show.rating.to_s %></li>
 
 <% end %>
@@ -23,6 +23,9 @@
           text-align: center;
           font-size: 1.5em;
       }
+h5 {
+    color: gold;
+}
 
 #cover {
     text-align: center;

@@ -8,10 +8,8 @@ class ShowsController < ApplicationController
     #find the current user that is logged in
     #associate that show with the user.
     post '/shows' do
-        show = Show.create(params)
         user = Helpers.current_user(session)
-        show.user = user
-        show.save
+        user.shows.create(params)
         redirect to "/users/#{user.id}"
     end
 
