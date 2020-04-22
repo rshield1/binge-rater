@@ -36,6 +36,8 @@ What should I be prepared to answer??  Well lets answer these questions!
     the information when you render the show page as erb tags within the view <%=  %>
 
 3. What is the difference between “redirect to” and “erb”
+        redriect -- display the change of state post/patch/delete.
+        erb -- used during get requests to rectieve a page that already exists.
 
     
 
